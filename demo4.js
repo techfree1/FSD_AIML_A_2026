@@ -7,5 +7,6 @@ const newstu={
     ...student,
     section:"A"
 
+    
 }
 console.log("new student=",newstu);
