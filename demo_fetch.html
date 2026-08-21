@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo Fetch in JS</title>
+
+    <style>
+        table{
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #f4f4f4;
+            font-size: 18px;
+        }
+
+        th,td{
+            border:2px solid green;
+            padding:10px;
+            text-align:center;
+        }
+
+        th{
+            background:#007bff;
+            color:white;
+        }
+
+        img{
+            width:80px;
+            height:80px;
+            object-fit:cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr.No.</th>
+            <th>Title</th>
+            <th>Image</th>
+            <th>QR Code</th>
+            <th>Category</th>
+            <th>Price ($)</th>
+            <th>Rating</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+
+    <tbody id="data"></tbody>
+</table>
+
+<script>
+
+const ele = document.getElementById("data");
+
+const URL = "https://dummyjson.com/products?limit=100&skip=0";
+
+async function loadProducts(){
+
+    try{
+
+        const res = await fetch(URL);
+
+        const data = await res.json();
+
+        console.log(data.products);
+
+        let row = "";
+
+        data.products.forEach((item,index)=>{
+
+            row += `
+            <tr>
+                <td>${index + 1}</td>
+                <td>${item.title}</td>
+
+                <td>
+                    <img src="${item.images[0]}" alt="${item.title}">
+                </td>
+
+                <td>
+                    <img src="${item.meta.qrCode}" alt="QR Code">
+                </td>
+
+                <td>${item.category}</td>
+                <td>$${item.price}</td>
+                <td>${item.rating}</td>
+                <td>${item.stock}</td>
+            </tr>
+            `;
+        });
+
+        ele.innerHTML = row;
+
+    }
+    catch(err){
+
+        console.log(err);
+
+        ele.innerHTML = `
+        <tr>
+            <td colspan="8">Network Error</td>
+        </tr>
+        `;
+    }
+
+}
+
+loadProducts();
+
+</script>
+
+</body>
+</html>
