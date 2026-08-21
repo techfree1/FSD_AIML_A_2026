@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Store</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 30px;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      #root {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+      }
+
+      .book {
+        width: 220px;
+        min-height: 320px;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 12px;
+        background-color: white;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .book img {
+        width: 150px;
+        height: 190px;
+        object-fit: cover;
+        border-radius: 6px;
+      }
+
+      .book h2 {
+        font-size: 20px;
+        margin: 15px 0;
+      }
+
+      .book p {
+        font-size: 18px;
+      }
+
+      .book button {
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+
+      .book button:hover {
+        background-color: #444;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>📚 Book Store</h1>
+
+    <div id="root"></div>
+
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+    ></script>
+    <script src="./bookapp.js"></script>
+  </body>
+</html>
+=
