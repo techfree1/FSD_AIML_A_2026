@@ -1,17 +1,17 @@
 const bookdata = [
     {
         title: "The Road to React",
-        image: "book.jpg",
+        image: "https://via.placeholder.com/150x190?text=Road+to+React",
         price: 599
     },
     {
         title: "Complete Guide",
-        image: "book2.jpg",
+        image: "https://via.placeholder.com/150x190?text=Complete+Guide",
         price: 699
     },
     {
         title: "Beginning  React",
-        image: "book3.jpg",
+        image: "https://via.placeholder.com/150x190?text=Beginning+React",
         price: 799
     }
 ];

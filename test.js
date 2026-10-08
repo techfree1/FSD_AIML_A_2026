@@ -1,4 +1,4 @@
-import sum from "./demo5.js";
+import { sum } from "./demo5.js";
 console.log("sum=",sum(1));
 console.log("sum=",sum(334,2334));
 console.log("sum= ",sum(101,209,345));
